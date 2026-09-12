@@ -5,11 +5,12 @@ import FolioBuilder from './components/FolioBuilder';
 import ProductCatalog from './components/ProductCatalog';
 import ProductDetailModal from './components/ProductDetailModal';
 import Craftsmanship from './components/Craftsmanship';
+import UnboxingShowcase from './components/UnboxingShowcase';
 import Reviews from './components/Reviews';
 import CartDrawer from './components/CartDrawer';
 import CheckoutModal from './components/CheckoutModal';
 import Footer from './components/Footer';
-import { Check, Sparkles } from 'lucide-react';
+import { Check, Sparkles, SlidersHorizontal } from 'lucide-react';
 
 export default function App() {
   // Persistence for cart & wishlist
@@ -68,7 +69,6 @@ export default function App() {
 
   const handleAddToCart = (product) => {
     setCartItems((prev) => {
-      // Check if exact same product + options already exists
       const existingIdx = prev.findIndex(
         (item) =>
           item.id === product.id &&
@@ -122,14 +122,25 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#2C2420] flex flex-col font-sans selection:bg-[#C69A59]/30">
+    <div className="min-h-screen bg-[#0B0A09] text-[#FAF7F2] flex flex-col font-sans selection:bg-[#D4AF37]/30">
       {/* Toast Banner */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#1C1917] text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 border border-[#C69A59] animate-slide-up">
-          <Check className="w-4 h-4 text-[#C69A59]" />
+        <div className="fixed bottom-6 left-6 z-50 bg-[#161412] text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 border border-[#D4AF37] animate-slide-up">
+          <Check className="w-4 h-4 text-[#D4AF37]" />
           <span>{toastMessage}</span>
         </div>
       )}
+
+      {/* Floating Bespoke Builder Trigger Bar */}
+      <div className="fixed bottom-6 right-6 z-40 hidden sm:block">
+        <button
+          onClick={() => scrollToSection('builder')}
+          className="btn-gold-glow py-3 px-5 text-xs flex items-center gap-2 rounded-full shadow-2xl border border-white/30 hover:scale-110 transition-transform font-bold"
+        >
+          <SlidersHorizontal className="w-4 h-4 text-[#0B0A09]" />
+          <span>Custom Configurator</span>
+        </button>
+      </div>
 
       {/* Navigation */}
       <Navbar
@@ -152,7 +163,7 @@ export default function App() {
           onExplore={() => scrollToSection('catalog')}
         />
 
-        {/* Interactive Folio Builder */}
+        {/* Bespoke Interactive Folio Builder */}
         <FolioBuilder
           onAddToCart={handleAddToCart}
           currency={currency}
@@ -172,6 +183,9 @@ export default function App() {
 
         {/* Craftsmanship & Patina Showcase */}
         <Craftsmanship />
+
+        {/* Luxury Gift Packaging Unboxing Showcase */}
+        <UnboxingShowcase onOpenBuilder={() => scrollToSection('builder')} />
 
         {/* Reviews & FAQs */}
         <Reviews />
@@ -207,7 +221,7 @@ export default function App() {
         setDiscountApplied={setDiscountApplied}
       />
 
-      {/* Netlify-Form Ready Checkout Modal */}
+      {/* Netlify Checkout Modal */}
       <CheckoutModal
         isOpen={isCheckoutOpen}
         onClose={() => setIsCheckoutOpen(false)}

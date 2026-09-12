@@ -1,72 +1,82 @@
 import React from 'react';
-import { Sparkles, ArrowRight, ShieldCheck, Feather, Compass, RefreshCw } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Feather, Compass, RefreshCw, Star } from 'lucide-react';
 
 export default function Hero({ onOpenBuilder, onExplore }) {
   return (
-    <section className="relative bg-[#1C1917] text-[#FAF7F2] overflow-hidden">
-      {/* Background Hero Image with Dark Gradient Overlay */}
-      <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
+    <section className="relative min-h-[90vh] flex items-center justify-center bg-[#0B0A09] text-[#FAF7F2] overflow-hidden py-24">
+      {/* Background Ambient Glowing Orbs */}
+      <div className="bg-glow-orb -top-20 -left-20"></div>
+      <div className="bg-glow-orb bottom-0 right-0"></div>
+
+      {/* Hero Background Image with Dark Vignette Gradient */}
+      <div className="absolute inset-0 z-0 opacity-45">
         <img
-          src="/images/hero_leather_folio.jpg"
-          alt="Handmade Cognac Leather Folio Cover with Brass Fountain Pen"
-          className="w-full h-full object-cover object-center"
+          src="/images/hero_folios_group.jpg"
+          alt="Handmade Leather Folios in Tuscan Hide"
+          className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1C1917] via-[#1C1917]/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0A09] via-[#0B0A09]/70 to-[#0B0A09]/40"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
-        <div className="max-w-2xl">
-          {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C69A59]/20 border border-[#C69A59]/40 text-[#C69A59] text-xs font-semibold uppercase tracking-widest mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Refillable Tuscan Leather Journal Covers</span>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
+          {/* Rating Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-dark text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-8 border border-[#D4AF37]/30 shadow-lg">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-[#D4AF37]" />
+              ))}
+            </div>
+            <span className="text-white font-extrabold ml-1">4.98 / 5.0</span>
+            <span className="text-[#A3968C] font-normal">• 4,500+ Verified Writers</span>
           </div>
 
           {/* Main Title */}
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] mb-6 text-[#FAF7F2]">
-            Handmade Folios <br />
-            <span className="italic font-normal text-[#C69A59]">For Life's Quiet Moments</span>
+          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 text-white tracking-tight">
+            Handcrafted Leather <br />
+            <span className="text-gold-gradient italic font-normal">For Life's Quiet Moments</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-[#E8E0D5]/90 mb-8 font-light leading-relaxed max-w-xl">
-            Inspired by European artisan notebook binders. Crafted from vegetable-tanned full-grain leather, customizable with initial gold foil stamping, and built to age into a personal heirloom.
+          <p className="text-base sm:text-xl text-[#A3968C] mb-10 font-light leading-relaxed max-w-2xl">
+            Bespoke refillable notebook folios handcrafted in Florence from vegetable-tanned Tuscan hides. Custom initial gold foil stamping, 80gsm fountain-pen paper, and built to age into a personal heirloom.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16">
+          {/* Action CTAs */}
+          <div className="flex flex-col sm:flex-row items-center gap-5 mb-16 w-full sm:w-auto">
             <button
               onClick={onOpenBuilder}
-              className="btn btn-gold py-4 px-8 text-sm flex items-center justify-center gap-3 shadow-lg hover:scale-105 transition-transform"
+              className="btn-gold-glow w-full sm:w-auto py-4 px-10 text-sm flex items-center justify-center gap-3 font-extrabold tracking-widest rounded-xl shadow-2xl hover:scale-105 transition-transform"
             >
+              <Sparkles className="w-4 h-4 text-[#0B0A09]" />
               <span>Build Custom Folio</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#0B0A09]" />
             </button>
             <button
               onClick={onExplore}
-              className="btn btn-outline py-4 px-8 text-sm text-[#FAF7F2] border-[#FAF7F2] hover:bg-[#FAF7F2] hover:text-[#1C1917] flex items-center justify-center"
+              className="btn-dark-outline w-full sm:w-auto py-4 px-10 text-sm font-bold tracking-widest rounded-xl hover:border-[#D4AF37]"
             >
               Explore Collection
             </button>
           </div>
 
-          {/* Trust Value Props */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-[#FAF7F2]/15 text-xs text-[#E8E0D5]/80">
-            <div className="flex items-center gap-2.5">
-              <Compass className="w-5 h-5 text-[#C69A59] shrink-0" />
-              <span>Full-Grain Tuscan Leather</span>
+          {/* Trust Floating Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full pt-8 border-t border-[#D4AF37]/15">
+            <div className="glass-card-dark p-4 rounded-xl flex items-center justify-center gap-3 text-xs text-[#FAF7F2]">
+              <Compass className="w-4 h-4 text-[#D4AF37] shrink-0" />
+              <span className="font-semibold">Tuscan Full-Grain</span>
             </div>
-            <div className="flex items-center gap-2.5">
-              <Feather className="w-5 h-5 text-[#C69A59] shrink-0" />
-              <span>80gsm Fountain-Pen Paper</span>
+            <div className="glass-card-dark p-4 rounded-xl flex items-center justify-center gap-3 text-xs text-[#FAF7F2]">
+              <Feather className="w-4 h-4 text-[#D4AF37] shrink-0" />
+              <span className="font-semibold">80gsm Fountain-Pen Paper</span>
             </div>
-            <div className="flex items-center gap-2.5">
-              <RefreshCw className="w-5 h-5 text-[#C69A59] shrink-0" />
-              <span>Infinite Refill System</span>
+            <div className="glass-card-dark p-4 rounded-xl flex items-center justify-center gap-3 text-xs text-[#FAF7F2]">
+              <RefreshCw className="w-4 h-4 text-[#D4AF37] shrink-0" />
+              <span className="font-semibold">Modular Refill System</span>
             </div>
-            <div className="flex items-center gap-2.5">
-              <ShieldCheck className="w-5 h-5 text-[#C69A59] shrink-0" />
-              <span>Lifetime Leather Guarantee</span>
+            <div className="glass-card-dark p-4 rounded-xl flex items-center justify-center gap-3 text-xs text-[#FAF7F2]">
+              <ShieldCheck className="w-4 h-4 text-[#D4AF37] shrink-0" />
+              <span className="font-semibold">Lifetime Guarantee</span>
             </div>
           </div>
         </div>
