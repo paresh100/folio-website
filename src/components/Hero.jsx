@@ -1,82 +1,80 @@
 import React from 'react';
-import { Sparkles, ArrowRight, ShieldCheck, Feather, Compass, RefreshCw, Star } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Feather, Compass, RefreshCw, ShieldCheck } from 'lucide-react';
 
 export default function Hero({ onOpenBuilder, onExplore }) {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center bg-[#0B0A09] text-[#FAF7F2] overflow-hidden py-24">
-      {/* Background Ambient Glowing Orbs */}
-      <div className="bg-glow-orb -top-20 -left-20"></div>
-      <div className="bg-glow-orb bottom-0 right-0"></div>
-
-      {/* Hero Background Image with Dark Vignette Gradient */}
-      <div className="absolute inset-0 z-0 opacity-45">
-        <img
-          src="/images/hero_folios_group.jpg"
-          alt="Handmade Leather Folios in Tuscan Hide"
-          className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0A09] via-[#0B0A09]/70 to-[#0B0A09]/40"></div>
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-          {/* Rating Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-dark text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-8 border border-[#D4AF37]/30 shadow-lg">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-[#D4AF37]" />
-              ))}
+    <section className="relative bg-[#F6F3ED] text-[#1A1816] py-20 md:py-32 border-b border-[#E2DCD0]">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Text Column */}
+          <div className="lg:col-span-6 space-y-8">
+            {/* Pill Badge */}
+            <div className="forme-pill">
+              <span className="w-2 h-2 rounded-full bg-[#A45834]"></span>
+              <span>An independent leather folio studio</span>
             </div>
-            <span className="text-white font-extrabold ml-1">4.98 / 5.0</span>
-            <span className="text-[#A3968C] font-normal">• 4,500+ Verified Writers</span>
+
+            {/* Main Headline */}
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-normal leading-[1.08] text-[#1A1816] tracking-tight">
+              A little structure. <br />
+              <span className="italic font-light text-[#A45834]">A lot of soul.</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-lg sm:text-xl text-[#5E564E] font-light leading-relaxed max-w-xl">
+              Leather folios for the notes, plans and beautiful loose ends of life. Three distinct formats. Room to make each one your own.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+              <button
+                onClick={onOpenBuilder}
+                className="btn-forme-primary py-4 px-8 text-sm flex items-center justify-center gap-2 shadow-sm"
+              >
+                <span>Meet your everyday</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+              <button
+                onClick={onExplore}
+                className="btn-forme-outline py-4 px-8 text-sm flex items-center justify-center gap-2"
+              >
+                <span>Discover the folios</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Value Props */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[#E2DCD0] text-xs text-[#5E564E]">
+              <div>
+                <span className="font-bold text-[#1A1816] block">3 Formats</span>
+                <span>A6, A5 & A4 Studio</span>
+              </div>
+              <div>
+                <span className="font-bold text-[#1A1816] block">Full-Grain Leather</span>
+                <span>Vegetable Tanned</span>
+              </div>
+              <div>
+                <span className="font-bold text-[#1A1816] block">Refill System</span>
+                <span>80gsm Swedish Paper</span>
+              </div>
+            </div>
           </div>
 
-          {/* Main Title */}
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 text-white tracking-tight">
-            Handcrafted Leather <br />
-            <span className="text-gold-gradient italic font-normal">For Life's Quiet Moments</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-base sm:text-xl text-[#A3968C] mb-10 font-light leading-relaxed max-w-2xl">
-            Bespoke refillable notebook folios handcrafted in Florence from vegetable-tanned Tuscan hides. Custom initial gold foil stamping, 80gsm fountain-pen paper, and built to age into a personal heirloom.
-          </p>
-
-          {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-5 mb-16 w-full sm:w-auto">
-            <button
-              onClick={onOpenBuilder}
-              className="btn-gold-glow w-full sm:w-auto py-4 px-10 text-sm flex items-center justify-center gap-3 font-extrabold tracking-widest rounded-xl shadow-2xl hover:scale-105 transition-transform"
-            >
-              <Sparkles className="w-4 h-4 text-[#0B0A09]" />
-              <span>Build Custom Folio</span>
-              <ArrowRight className="w-4 h-4 text-[#0B0A09]" />
-            </button>
-            <button
-              onClick={onExplore}
-              className="btn-dark-outline w-full sm:w-auto py-4 px-10 text-sm font-bold tracking-widest rounded-xl hover:border-[#D4AF37]"
-            >
-              Explore Collection
-            </button>
-          </div>
-
-          {/* Trust Floating Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full pt-8 border-t border-[#D4AF37]/15">
-            <div className="glass-card-dark p-4 rounded-xl flex items-center justify-center gap-3 text-xs text-[#FAF7F2]">
-              <Compass className="w-4 h-4 text-[#D4AF37] shrink-0" />
-              <span className="font-semibold">Tuscan Full-Grain</span>
-            </div>
-            <div className="glass-card-dark p-4 rounded-xl flex items-center justify-center gap-3 text-xs text-[#FAF7F2]">
-              <Feather className="w-4 h-4 text-[#D4AF37] shrink-0" />
-              <span className="font-semibold">80gsm Fountain-Pen Paper</span>
-            </div>
-            <div className="glass-card-dark p-4 rounded-xl flex items-center justify-center gap-3 text-xs text-[#FAF7F2]">
-              <RefreshCw className="w-4 h-4 text-[#D4AF37] shrink-0" />
-              <span className="font-semibold">Modular Refill System</span>
-            </div>
-            <div className="glass-card-dark p-4 rounded-xl flex items-center justify-center gap-3 text-xs text-[#FAF7F2]">
-              <ShieldCheck className="w-4 h-4 text-[#D4AF37] shrink-0" />
-              <span className="font-semibold">Lifetime Guarantee</span>
+          {/* Right Hero Visual Showcase */}
+          <div className="lg:col-span-6">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E2DCD0] shadow-xl group">
+              <img
+                src="/images/hero_folios_group.jpg"
+                alt="FORME Leather Folios Collection"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1816]/60 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white text-xs">
+                <span className="font-serif text-lg italic">The First Collection</span>
+                <span className="forme-pill bg-white/20 backdrop-blur-md text-white border-white/30">
+                  Florence & London
+                </span>
+              </div>
             </div>
           </div>
         </div>

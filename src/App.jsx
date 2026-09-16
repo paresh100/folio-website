@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ThreeFormats from './components/ThreeFormats';
 import FolioBuilder from './components/FolioBuilder';
 import ProductCatalog from './components/ProductCatalog';
 import ProductDetailModal from './components/ProductDetailModal';
-import Craftsmanship from './components/Craftsmanship';
+import OurWorld from './components/OurWorld';
 import UnboxingShowcase from './components/UnboxingShowcase';
 import Reviews from './components/Reviews';
 import CartDrawer from './components/CartDrawer';
 import CheckoutModal from './components/CheckoutModal';
 import Footer from './components/Footer';
-import { Check, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { Check, SlidersHorizontal } from 'lucide-react';
 
 export default function App() {
-  // Persistence for cart & wishlist
   const [cartItems, setCartItems] = useState(() => {
     try {
-      const saved = localStorage.getItem('atelier_cart');
+      const saved = localStorage.getItem('forme_cart');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
       return [];
@@ -25,7 +25,7 @@ export default function App() {
 
   const [wishlist, setWishlist] = useState(() => {
     try {
-      const saved = localStorage.getItem('atelier_wishlist');
+      const saved = localStorage.getItem('forme_wishlist');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
       return [];
@@ -35,13 +35,14 @@ export default function App() {
   const [currency, setCurrency] = useState('USD');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState('all');
+  const [selectedFormatFromGrid, setSelectedFormatFromGrid] = useState(null);
 
-  // Modals & Drawers
+  // Modals
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [activeProductModal, setActiveProductModal] = useState(null);
 
-  // Promo code state
+  // Promo code
   const [discountCode, setDiscountCode] = useState('');
   const [discountApplied, setDiscountApplied] = useState(false);
 
@@ -50,13 +51,13 @@ export default function App() {
 
   useEffect(() => {
     try {
-      localStorage.setItem('atelier_cart', JSON.stringify(cartItems));
+      localStorage.setItem('forme_cart', JSON.stringify(cartItems));
     } catch (e) {}
   }, [cartItems]);
 
   useEffect(() => {
     try {
-      localStorage.setItem('atelier_wishlist', JSON.stringify(wishlist));
+      localStorage.setItem('forme_wishlist', JSON.stringify(wishlist));
     } catch (e) {}
   }, [wishlist]);
 
@@ -121,24 +122,29 @@ export default function App() {
     }
   };
 
+  const handleSelectFormatFromGrid = (formatId) => {
+    setSelectedFormatFromGrid(formatId);
+    scrollToSection('builder');
+  };
+
   return (
-    <div className="min-h-screen bg-[#0B0A09] text-[#FAF7F2] flex flex-col font-sans selection:bg-[#D4AF37]/30">
-      {/* Toast Banner */}
+    <div className="min-h-screen bg-[#F6F3ED] text-[#1A1816] flex flex-col font-sans selection:bg-[#A45834]/20">
+      {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 left-6 z-50 bg-[#161412] text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 border border-[#D4AF37] animate-slide-up">
-          <Check className="w-4 h-4 text-[#D4AF37]" />
+        <div className="fixed bottom-6 left-6 z-50 bg-[#1A1816] text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 border border-[#E2DCD0] animate-slide-up">
+          <Check className="w-4 h-4 text-[#C69A59]" />
           <span>{toastMessage}</span>
         </div>
       )}
 
-      {/* Floating Bespoke Builder Trigger Bar */}
+      {/* Floating Configurator Button */}
       <div className="fixed bottom-6 right-6 z-40 hidden sm:block">
         <button
           onClick={() => scrollToSection('builder')}
-          className="btn-gold-glow py-3 px-5 text-xs flex items-center gap-2 rounded-full shadow-2xl border border-white/30 hover:scale-110 transition-transform font-bold"
+          className="btn-forme-primary py-3 px-5 text-xs flex items-center gap-2 shadow-xl hover:scale-105 transition-transform"
         >
-          <SlidersHorizontal className="w-4 h-4 text-[#0B0A09]" />
-          <span>Custom Configurator</span>
+          <SlidersHorizontal className="w-4 h-4" />
+          <span>Studio Configurator</span>
         </button>
       </div>
 
@@ -157,19 +163,26 @@ export default function App() {
       />
 
       <main className="flex-1">
-        {/* Hero Banner */}
+        {/* Editorial Hero */}
         <Hero
           onOpenBuilder={() => scrollToSection('builder')}
           onExplore={() => scrollToSection('catalog')}
         />
 
-        {/* Bespoke Interactive Folio Builder */}
-        <FolioBuilder
-          onAddToCart={handleAddToCart}
+        {/* Three Formats Grid (A6, A5, A4) */}
+        <ThreeFormats
+          onSelectFormat={handleSelectFormatFromGrid}
           currency={currency}
         />
 
-        {/* Product Catalog */}
+        {/* Bespoke Studio Configurator */}
+        <FolioBuilder
+          onAddToCart={handleAddToCart}
+          currency={currency}
+          initialFormat={selectedFormatFromGrid}
+        />
+
+        {/* Collection Catalog */}
         <ProductCatalog
           onAddToCart={handleAddToCart}
           onOpenProductModal={(p) => setActiveProductModal(p)}
@@ -181,13 +194,13 @@ export default function App() {
           onToggleWishlist={handleToggleWishlist}
         />
 
-        {/* Craftsmanship & Patina Showcase */}
-        <Craftsmanship />
+        {/* Our World - Craft & Materials */}
+        <OurWorld />
 
-        {/* Luxury Gift Packaging Unboxing Showcase */}
+        {/* Unboxing Showcase */}
         <UnboxingShowcase onOpenBuilder={() => scrollToSection('builder')} />
 
-        {/* Reviews & FAQs */}
+        {/* Reviews */}
         <Reviews />
       </main>
 
@@ -221,7 +234,7 @@ export default function App() {
         setDiscountApplied={setDiscountApplied}
       />
 
-      {/* Netlify Checkout Modal */}
+      {/* Checkout Modal */}
       <CheckoutModal
         isOpen={isCheckoutOpen}
         onClose={() => setIsCheckoutOpen(false)}

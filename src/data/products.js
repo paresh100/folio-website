@@ -5,160 +5,152 @@ export const CURRENCIES = {
 };
 
 export const LEATHER_FINISHES = [
-  { id: 'cognac', name: 'Cognac Tuscan', hex: '#8C4724', image: '/images/folio_cognac.jpg', desc: 'Warm amber tones with natural pull-up character.' },
-  { id: 'espresso', name: 'Dark Espresso', hex: '#3D261A', image: '/images/folio_espresso.jpg', desc: 'Deep chocolate brown full-grain Tuscan hide.' },
-  { id: 'olive', name: 'Forest Olive', hex: '#4E5E4A', image: '/images/folio_olive.jpg', desc: 'Rich muted botanical green with subtle patina.' },
-  { id: 'oak', name: 'Vintage Oak', hex: '#B87A44', image: '/images/hero_leather_folio.jpg', desc: 'Classic golden brown with hand-waxed finish.' },
-  { id: 'noir', name: 'Obsidian Noir', hex: '#1C1A19', image: '/images/folio_espresso.jpg', desc: 'Sleek matte midnight black with satin sheen.' }
+  { id: 'saddle', name: 'Saddle Tan', hex: '#A45834', image: '/images/folio_cognac.jpg', desc: 'Warm chestnut amber full-grain leather with natural pull-up.' },
+  { id: 'espresso', name: 'Oak Espresso', hex: '#4A2E1F', image: '/images/folio_espresso.jpg', desc: 'Deep chocolate brown vegetable-tanned hide.' },
+  { id: 'moss', name: 'Moss Green', hex: '#4B5944', image: '/images/folio_olive.jpg', desc: 'Rich botanical olive green with satin finish.' },
+  { id: 'obsidian', name: 'Obsidian Noir', hex: '#211E1C', image: '/images/folio_espresso.jpg', desc: 'Matte black leather with subtle grain texture.' }
 ];
 
 export const SIZES = [
-  { id: 'pocket', name: 'Pocket Passport (9.5 x 14 cm)', basePrice: 65, desc: 'Compact companion for passports & small memo inserts.' },
-  { id: 'a5', name: 'Grand A5 Journal (15 x 22 cm)', basePrice: 95, desc: 'The iconic standard size for daily journaling & sketching.' },
-  { id: 'xl', name: 'Executive XL / iPad (21 x 28 cm)', basePrice: 135, desc: 'Holds A4 documents, tablets, and multiple refills.' }
+  { id: 'a6', name: 'The Everyday (A6 Pocket)', dimensions: '10.5 x 15 cm', basePrice: 75, desc: 'Little notes. Big ideas. A compact companion for wherever the day takes you.' },
+  { id: 'a5', name: 'The Daybook (A5 Journal)', dimensions: '15.5 x 22 cm', basePrice: 115, desc: 'A home for your plans, pages and half-formed thoughts. The size of possibility.' },
+  { id: 'a4', name: 'The Big Picture (A4 Studio)', dimensions: '22 x 31 cm', basePrice: 165, desc: 'Room to spread out. For projects, sketches and the work that needs a little more space.' }
 ];
 
 export const ELASTIC_COLORS = [
-  { id: 'terracotta', name: 'Terracotta Rust', hex: '#B85338' },
-  { id: 'brass', name: 'Burnt Ochre', hex: '#C69A59' },
-  { id: 'emerald', name: 'Deep Emerald', hex: '#2A4B3A' },
-  { id: 'crimson', name: 'Vintage Crimson', hex: '#7A2424' },
-  { id: 'charcoal', name: 'Charcoal Black', hex: '#2B2B2B' }
+  { id: 'terracotta', name: 'Terracotta', hex: '#A45834' },
+  { id: 'sand', name: 'Sand Beige', hex: '#D8CEBE' },
+  { id: 'forest', name: 'Forest Moss', hex: '#4B5944' },
+  { id: 'charcoal', name: 'Charcoal Black', hex: '#2B2825' }
 ];
 
 export const STAMPING_FINISHES = [
-  { id: 'gold', name: '24k Gold Foil', extraCost: 10 },
-  { id: 'silver', name: 'Sterling Silver Foil', extraCost: 10 },
-  { id: 'deboss', name: 'Blind Heat Deboss', extraCost: 8 }
+  { id: 'deboss', name: 'Blind Heat Deboss', extraCost: 10, desc: 'Subtle, tactile heat-pressed initials into the leather.' },
+  { id: 'gold', name: 'Subtle Gold Foil', extraCost: 12, desc: 'Warm 24k gold leaf foil impression.' }
 ];
 
 export const REFILL_BUNDLES = [
-  { id: 'dot_lined', name: 'Dot Grid + Lined (2 Pack)', price: 18, desc: 'Fountain-pen friendly 80gsm ivory paper.' },
-  { id: 'planner_zip', name: 'Weekly Planner + PVC Zip Pouch', price: 24, desc: 'Planner insert plus clear pocket for receipts & pens.' },
-  { id: 'artist_trio', name: 'Artist Trio (Dot Grid, Blank, Kraft)', price: 26, desc: 'Complete set of 3 booklets for writing and sketching.' }
+  { id: 'dot_lined', name: 'Dot Grid + Lined Set', price: 20, desc: '80gsm acid-free Swedish paper inserts.' },
+  { id: 'planner_blank', name: 'Weekly Planner + Blank Booklet', price: 25, desc: 'Layout for dates and freehand sketches.' },
+  { id: 'artist_trio', name: 'Complete Studio Trio (3 Booklets)', price: 28, desc: '1 Dot Grid, 1 Lined, 1 Blank paper insert.' }
 ];
 
 export const PRODUCTS = [
   {
-    id: 'folio-voyageur-a5',
-    title: 'The Voyageur A5 Leather Folio',
-    subtitle: 'Signature Refillable Tuscan Leather Journal',
+    id: 'forme-daybook-a5',
+    title: 'The Daybook (A5)',
+    subtitle: 'A home for your plans, pages and half-formed thoughts. The size of possibility.',
     category: 'folios',
-    priceUSD: 95,
-    rating: 4.9,
-    reviewsCount: 142,
+    priceUSD: 115,
+    rating: 4.95,
+    reviewsCount: 128,
     image: '/images/folio_cognac.jpg',
     secondaryImage: '/images/hero_leather_folio.jpg',
-    badge: 'Bestseller',
-    description: 'Handcrafted in Florence from 2.5mm full-grain vegetable-tanned leather. Holds up to 4 refillable booklets with an interchangeable internal elastic ribbon system. Includes 1 dot grid insert.',
+    badge: 'Signature',
+    description: 'Our staple A5 folio format. Crafted from full-grain vegetable-tanned leather. Fits up to 4 refillable booklets with an interchangeable central elastic spine.',
     details: [
-      'Authentic Tuscan vegetable-tanned full-grain leather',
-      'Holds 1 to 4 booklet inserts securely',
-      'Includes 1 free 80gsm Ivory paper dot grid notebook',
-      'Cut, burnished, and assembled by hand',
-      'Custom monogramming available (up to 4 characters)'
+      'Full-grain vegetable-tanned Tuscan leather',
+      'Fits 15.5 x 22 cm refills and standard A5 notebooks',
+      'Internal cord system holds up to 4 paper booklets',
+      'Includes 1 free 80gsm Ivory dot grid insert',
+      'Optional personalized monogramming'
     ],
-    leatherOptions: ['cognac', 'espresso', 'olive', 'oak', 'noir'],
+    leatherOptions: ['saddle', 'espresso', 'moss', 'obsidian'],
     inStock: true
   },
   {
-    id: 'folio-pocket-passport',
-    title: 'The Traveler Pocket Folio',
-    subtitle: 'Passport & Pocket Journal Cover',
+    id: 'forme-everyday-a6',
+    title: 'The Everyday (A6)',
+    subtitle: 'Little notes. Big ideas. A compact companion for wherever the day takes you.',
     category: 'folios',
-    priceUSD: 65,
-    rating: 4.8,
-    reviewsCount: 89,
+    priceUSD: 75,
+    rating: 4.9,
+    reviewsCount: 94,
     image: '/images/folio_espresso.jpg',
     secondaryImage: '/images/folio_cognac.jpg',
     badge: 'Popular',
-    description: 'Designed for explorers and daily notes. Perfectly fits standard passport booklets, Field Notes, and pocket calendar refills.',
+    description: 'Designed for passport booklets, memo inserts, and pocket thoughts. Lightweight, tactile, and indestructible.',
     details: [
-      'Fits standard 9x14 cm pocket notebooks & passports',
-      'Integrated card slot for transit cards & business cards',
-      'Solid brass closure clip included',
-      'Ages gracefully with a rich natural patina'
+      'Compact 10.5 x 15 cm size',
+      'Holds passport & A6 memo inserts',
+      'Integrated card slot for transit cards',
+      'Hand-slicked beeswax edges'
     ],
-    leatherOptions: ['espresso', 'cognac', 'olive', 'noir'],
+    leatherOptions: ['espresso', 'saddle', 'moss', 'obsidian'],
     inStock: true
   },
   {
-    id: 'folio-olive-special',
-    title: 'The Botanical Olive A5 Folio',
-    subtitle: 'Limited Edition Italian Leather Cover',
+    id: 'forme-bigpicture-a4',
+    title: 'The Big Picture (A4)',
+    subtitle: 'Room to spread out. For projects, sketches and the work that needs a little more space.',
     category: 'folios',
-    priceUSD: 105,
+    priceUSD: 165,
     rating: 5.0,
-    reviewsCount: 38,
+    reviewsCount: 42,
     image: '/images/folio_olive.jpg',
-    secondaryImage: '/images/leather_workshop.jpg',
-    badge: 'Limited Batch',
-    description: 'Tanned using chestnut and mimosa extracts for a subtle olive green tone with natural grain variations. Each piece is individually numbered.',
+    secondaryImage: '/images/hero_folios_group.jpg',
+    badge: 'Studio Edition',
+    description: 'Generous format for architects, writers, and designers. Holds A4 notebooks, iPad Pro, and project loose sheets.',
     details: [
-      'Limited production batch of 250 units',
-      'Solid brass pen holder loop attached',
-      'Includes 1 grid booklet and 1 blank sketch insert'
+      'Generous 22 x 31 cm studio format',
+      'Fits A4 pads, tablets & multiple booklets',
+      'Solid brass page clip included'
     ],
-    leatherOptions: ['olive'],
+    leatherOptions: ['moss', 'saddle', 'espresso', 'obsidian'],
     inStock: true
   },
   {
-    id: 'refill-paper-trio',
-    title: 'Ivory Paper Refill Booklets (3-Pack)',
-    subtitle: '80gsm Fountain-Pen Friendly Paper',
+    id: 'paper-refill-trio',
+    title: 'FORME Paper Booklet Inserts (3-Pack)',
+    subtitle: '80gsm Acid-Free Swedish Ivory Paper',
     category: 'refills',
     priceUSD: 24,
     rating: 4.9,
-    reviewsCount: 215,
+    reviewsCount: 180,
     image: '/images/paper_refills.jpg',
     secondaryImage: '/images/hero_leather_folio.jpg',
     badge: 'Essential',
-    description: 'Smooth, bleed-resistant 80gsm Swedish ivory paper designed for fountain pens, rollerballs, and watercolors. Contains 64 pages per booklet.',
+    description: 'Velvety smooth 80gsm ivory paper designed specifically for fountain pen fountain ink, watercolors, and daily note-taking.',
     details: [
-      'Pack includes: 1 Dot Grid, 1 Lined, 1 Blank Sketch',
-      'Stitched spine with organic cotton thread',
-      'Zero bleed-through or ghosting with archival inks'
+      '3 Booklets: 1 Dot Grid, 1 Lined, 1 Blank',
+      'Cotton-stitched spine bindings',
+      '64 pages per booklet'
     ],
     inStock: true
   },
   {
-    id: 'accessory-brass-clip-set',
-    title: 'Solid Brass Bookmark Clips & Pen Loops',
-    subtitle: 'Artisan Hardware Accessories',
+    id: 'brass-clip-set',
+    title: 'Solid Brass Studio Clip',
+    subtitle: 'Brushed Raw Brass Hardware',
     category: 'accessories',
     priceUSD: 18,
-    rating: 4.7,
-    reviewsCount: 64,
+    rating: 4.8,
+    reviewsCount: 52,
     image: '/images/hero_leather_folio.jpg',
     secondaryImage: '/images/folio_espresso.jpg',
-    badge: 'New',
-    description: 'Custom forged solid brass bookmark clips designed to keep your current page open and hold your favorite pen securely.',
-    details: [
-      '100% Solid raw brass with hand-brushed finish',
-      'Will develop a vintage patina alongside your leather cover',
-      'Holds pens up to 14mm in diameter'
-    ],
+    badge: 'Hardware',
+    description: 'Forged solid brass bookmark clip to mark your active page and secure your pen.',
+    details: ['100% Solid raw brass', 'Develops natural patina alongside leather'],
     inStock: true
   },
   {
-    id: 'gift-artisan-box',
-    title: 'The Master Artisan Starter Gift Set',
-    subtitle: 'Leather Folio + 3 Refills + Brass Pen + Monogram',
+    id: 'gift-studio-set',
+    title: 'The FORME Gift Box Set',
+    subtitle: 'Folio + 3 Inserts + Brass Pen + Monogram',
     category: 'gifts',
-    priceUSD: 145,
+    priceUSD: 155,
     rating: 5.0,
-    reviewsCount: 56,
-    image: '/images/leather_workshop.jpg',
+    reviewsCount: 68,
+    image: '/images/unboxing_luxury_box.jpg',
     secondaryImage: '/images/folio_cognac.jpg',
     badge: 'Gift Choice',
-    description: 'The ultimate luxury gift box presented in a rigid kraft box with wax seal. Includes A5 Folio, 3 Refill Booklets, Solid Brass Fountain Pen, and complimentary monogramming.',
+    description: 'Presented in a rigid charcoal box with wax seal, tissue wrapping, and handwritten studio letter.',
     details: [
-      'Choice of Leather Folio finish',
-      'Complimentary Custom Initial Monogramming',
-      'Solid Brass Pocket Fountain Pen included',
-      'Includes gift card with custom handwritten note'
+      'Choice of Folio format & leather finish',
+      'Includes complimentary initial debossing',
+      'Solid brass fountain pen & 3 refills included'
     ],
-    leatherOptions: ['cognac', 'espresso', 'olive', 'oak', 'noir'],
+    leatherOptions: ['saddle', 'espresso', 'moss', 'obsidian'],
     inStock: true
   }
 ];
@@ -166,54 +158,54 @@ export const PRODUCTS = [
 export const REVIEWS = [
   {
     id: 1,
-    name: 'Clarissa M.',
-    location: 'Paris, France',
+    name: 'Charlotte H.',
+    location: 'London, UK',
     rating: 5,
-    date: 'August 28, 2026',
-    title: 'Better than my Louise Carmen cover!',
-    comment: 'The quality of this leather is absolute perfection. The smell when opening the box was divine. The gold monogram initials look stunning and fountain pen ink does not bleed through the inserts at all.',
-    productName: 'The Voyageur A5 Leather Folio - Cognac',
+    date: 'September 2026',
+    title: 'A little structure. A lot of soul.',
+    comment: 'The quality of the leather and the restraint in design is unmatched. It feels personal, quiet, and timeless.',
+    productName: 'The Daybook (A5) — Saddle Tan',
     verified: true
   },
   {
     id: 2,
-    name: 'Julian Vance',
-    location: 'London, UK',
+    name: 'Marcus Thorne',
+    location: 'Stockholm, Sweden',
     rating: 5,
-    date: 'August 14, 2026',
-    title: 'An heirloom piece for daily writing',
-    comment: 'I travel constantly for work. Having my passport, notebook, and brass pen clipped together in one compact pocket folio has changed my workflow completely. After 3 months the patina is rich and glossy.',
-    productName: 'The Traveler Pocket Folio - Dark Espresso',
+    date: 'September 2026',
+    title: 'The everyday companion I was looking for',
+    comment: 'Fits my pocket notebook and passport seamlessly. The leather smells incredible and has already gained a subtle patina.',
+    productName: 'The Everyday (A6) — Oak Espresso',
     verified: true
   },
   {
     id: 3,
-    name: 'Sophia Lindqvist',
-    location: 'Stockholm, Sweden',
+    name: 'Elena Rostova',
+    location: 'Berlin, Germany',
     rating: 5,
-    date: 'July 30, 2026',
-    title: 'Exquisite paper and craft',
-    comment: 'I draw with fountain pens and watercolors. The paper refills handle heavy ink without buckling. The custom elastic band system lets me swap notebooks in seconds.',
-    productName: 'Ivory Paper Refill Booklets (3-Pack)',
+    date: 'August 2026',
+    title: 'Beautiful paper, flawless craftsmanship',
+    comment: 'Fountain pen ink glides over the paper inserts without a trace of bleed-through. Truly a joy to write in every day.',
+    productName: 'FORME Paper Booklet Inserts (3-Pack)',
     verified: true
   }
 ];
 
 export const FAQS = [
   {
-    q: 'How does the refillable notebook elastic system work?',
-    a: 'Each Atelier Folio features our central elastic ribbon mechanism. You slide your paper refill booklet under the central cord. You can insert up to 4 booklets simultaneously using connecting bands.'
+    q: 'What are the three folio formats?',
+    a: 'We offer three distinct formats: The Everyday (A6 Compact, 10.5x15 cm), The Daybook (A5 Standard, 15.5x22 cm), and The Big Picture (A4 Studio, 22x31 cm).'
   },
   {
-    q: 'What kind of leather do you use?',
-    a: 'We exclusively use full-grain, vegetable-tanned Tuscan leather sourced from certified Italian tanneries. No synthetic coatings are applied, allowing the leather to develop a unique patina over years of use.'
+    q: 'How does the central elastic spine system work?',
+    a: 'Each FORME folio features an internal woven elastic cord mechanism. You slide paper booklet inserts under the central cord, allowing you to bind up to 4 booklets simultaneously.'
   },
   {
-    q: 'Can I personalize my leather folio with custom initials?',
-    a: 'Yes! We offer hot foil stamping in 24k Gold, Sterling Silver, or Blind Heat Debossing (up to 4 capital letters). Each piece is stamped by hand in our workshop.'
+    q: 'Can I personalize my folio with initials?',
+    a: 'Yes. We offer subtle Blind Heat Debossing (deep tactile impression) or Gold Foil Stamping (up to 4 capital letters), stamped by hand in our studio.'
   },
   {
     q: 'Is the paper fountain-pen friendly?',
-    a: 'Absolutely. Our paper inserts are crafted from 80gsm acid-free ivory paper manufactured in Sweden. It provides a velvety writing surface with zero ghosting or feathering.'
+    a: 'Yes. Our paper inserts use 80gsm acid-free Swedish paper that prevents ink feathering or ghosting.'
   }
 ];
