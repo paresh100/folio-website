@@ -11,6 +11,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forme: {
+                bg: '#F6F3ED',
+                secondary: '#EFEBE3',
+                card: '#FAF8F5',
+                dark: '#1A1816',
+                terracotta: '#A45834',
+                oak: '#4A2E1F',
+                moss: '#4B5944',
+                gold: '#C69A59',
+                border: '#E2DCD0'
+              }
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+              sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
   </head>
   <body class="bg-[#F6F3ED] text-[#1A1816] antialiased selection:bg-[#A45834]/20 selection:text-[#A45834]">
     <!-- Hidden form for Netlify form detection -->
